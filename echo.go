@@ -458,7 +458,7 @@ func (e *Echo) Match(methods []string, path string, handler HandlerFunc, middlew
 }
 
 // Static registers a new route with path prefix to serve static files from the
-// provided root directory.
+// provided root directory with optional route-level middleware.
 func (e *Echo) Static(prefix, root string, m ...MiddlewareFunc) *Route {
 	if root == "" {
 		root = "." // For security we want to restrict to CWD.
